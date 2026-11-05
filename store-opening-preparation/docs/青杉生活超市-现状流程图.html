@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html data-page-node-id="g8auqWGmZ68DCtXSDlps4N" lang="zh-CN">
+<head data-page-node-id="8dF5sdijcRaexkkR2Z3QDY">
+<script data-page-node-id="x9EqAV6Lv8SiWIWGMbZM5a" src="/page/page_comm/inject.js"></script>
+<meta data-page-node-id="eXzAfGsnFFT1uMbDrCPrz0" charset="utf-8">
+<meta data-page-node-id="5HfS0yhFAjhCRe2geVVCPv" content="width=device-width,initial-scale=1" name="viewport">
+<title data-page-node-id="4rzQp3tZCyJovZwdlvtH7x" data-pnid-children="fNKm2xhi9AUPdGdR5wKoMU">现状流程图 · 开店筹备与运营验收（青杉生活超市）</title>
+<style data-page-node-id="lJBMeV1fXlCRrRlFmEX9SA" data-pnid-children="OxJWtp57CM0LBuUydzTT3r">
+  :root{
+    --bg:#f5f5f1; --card:#fff; --line:#e3e2d9; --line-strong:#cfcec3;
+    --ink:#1f2320; --ink2:#3d4340; --mute:#727869;
+    --green:#2f6b4f; --green-soft:#eaf2ec; --green-line:#b9d3c3;
+    --red:#a8443c; --red-soft:#fbeeec; --red-line:#e6c0ba;
+    --amber:#8a6320; --amber-soft:#fbf2df; --amber-line:#e6d3a8;
+    --blue:#2f5f8a; --blue-soft:#eaf1f7; --blue-line:#c2d5e6;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .page{max-width:1400px;margin:0 auto;padding:40px 32px 72px}
+  header{border-bottom:1px solid var(--line-strong);padding-bottom:22px;margin-bottom:26px}
+  h1{font-size:24px;font-weight:600;margin:0 0 8px;letter-spacing:-.01em}
+  .sub{color:var(--mute);font-size:13.5px;margin:0}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .meta span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 13px;font-size:12.5px;color:var(--ink2)}
+  .meta b{color:var(--green);font-weight:600}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin:0 0 26px;font-size:12.5px;color:var(--mute)}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+  .lg-flow i{background:var(--green-soft);border:1px solid var(--green-line)}
+  .lg-hand i{background:#fff;border:1px dashed var(--line-strong)}
+  .lg-judge{display:inline-block;width:9px;height:9px;background:var(--blue-soft);border:1px solid var(--blue);transform:rotate(45deg);margin-right:8px}
+  .lg-neck i{background:var(--amber-soft);border:1px solid var(--amber-line)}
+  .lg-exc i{background:var(--red-soft);border:1px solid var(--red-line)}
+
+  .trigger{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--green);border-radius:10px;padding:12px 18px;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+  .trigger .tag{font-size:11.5px;letter-spacing:.08em;color:var(--green);font-weight:600}
+  .trigger p{margin:0;font-size:13.5px;color:var(--ink2)}
+  .trigger p b{font-weight:600;color:var(--ink)}
+
+  .lane{display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px;align-items:start;margin-top:16px}
+  .lane-label{font-size:12px;color:var(--mute);padding-top:14px;text-align:right;line-height:1.4}
+  .lane-label b{display:block;font-size:12.5px;color:var(--ink2);font-weight:600}
+  .track{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+
+  .stage{position:relative;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px;min-height:132px}
+  .stage::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:2px;border-radius:2px;background:var(--green-soft)}
+  .stage:not(:last-child)::after{content:"";position:absolute;right:-14px;top:50%;width:8px;height:8px;border-top:1.5px solid var(--line-strong);border-right:1.5px solid var(--line-strong);transform:translateY(-50%) rotate(45deg)}
+  .stage .no{font-size:11px;letter-spacing:.08em;color:var(--mute);font-variant-numeric:tabular-nums}
+  .stage h3{font-size:14.5px;font-weight:600;margin:2px 0 4px}
+  .stage .owner{display:inline-block;font-size:11.5px;color:var(--green);background:var(--green-soft);border-radius:5px;padding:1px 7px;margin-bottom:8px}
+  .stage dl{margin:0;font-size:11.5px;color:var(--mute)}
+  .stage dl div{display:flex;gap:6px;margin-top:3px}
+  .stage dt{flex:0 0 26px;color:#9aa094}
+  .stage dd{margin:0;color:var(--ink2)}
+
+  .cell{font-size:11.5px;border-radius:10px;padding:9px 11px;min-height:38px}
+  .cell.empty{background:transparent}
+  .judge{background:var(--blue-soft);border:1px solid var(--blue-line);position:relative;padding-left:26px}
+  .judge::before{content:"";position:absolute;left:11px;top:13px;width:8px;height:8px;background:#fff;border:1.2px solid var(--blue);transform:rotate(45deg)}
+  .judge b{display:block;font-size:12px;color:var(--blue);font-weight:600;margin-bottom:1px}
+  .judge p{margin:0;color:var(--ink2);line-height:1.5}
+  .neck{background:var(--amber-soft);border:1px solid var(--amber-line)}
+  .neck b{display:block;font-size:12px;color:var(--amber);font-weight:600;margin-bottom:1px}
+  .neck p{margin:0;color:var(--ink2);line-height:1.5}
+  .exc{background:var(--red-soft);border:1px solid var(--red-line)}
+  .exc b{display:block;font-size:12px;color:var(--red);font-weight:600;margin-bottom:1px}
+  .exc p{margin:0;color:var(--ink2);line-height:1.5}
+
+  .handoff{margin-top:18px;background:#fff;border:1px dashed var(--line-strong);border-radius:10px;padding:12px 16px;font-size:12.5px;color:var(--ink2)}
+  .handoff b{color:var(--ink);font-weight:600}
+  .handoff .five{color:var(--green);font-weight:500}
+
+  .output{margin-top:14px;display:flex;justify-content:flex-end}
+  .output div{background:var(--green-soft);border:1px solid var(--green-line);border-radius:10px;padding:11px 18px;font-size:12.5px;color:var(--ink2);max-width:520px}
+  .output b{color:var(--green);font-weight:600;margin-right:6px}
+
+  h2{font-size:15px;font-weight:600;margin:38px 0 4px;padding-top:18px;border-top:1px solid var(--line)}
+  h2 .n{color:var(--mute);font-weight:400;margin-right:8px;font-variant-numeric:tabular-nums}
+  .hint{font-size:12.5px;color:var(--mute);margin:0 0 14px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .card h4{margin:0 0 8px;font-size:13.5px;font-weight:600;display:flex;align-items:center;gap:8px}
+  .card h4 .pill{font-size:10.5px;font-weight:600;border-radius:5px;padding:1px 7px;letter-spacing:.02em}
+  .pill.red{background:var(--red-soft);color:var(--red)}
+  .pill.blue{background:var(--blue-soft);color:var(--blue)}
+  .pill.amber{background:var(--amber-soft);color:var(--amber)}
+  .card p{margin:0 0 6px;font-size:12.5px;color:var(--ink2)}
+  .card p:last-child{margin-bottom:0}
+  .card p span.k{color:var(--mute);margin-right:6px}
+  .card .ev{color:#9aa094;font-size:11px;white-space:nowrap}
+
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:12.5px}
+  th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#fafaf6;font-weight:600;color:var(--ink2);font-size:12px;white-space:nowrap}
+  tr:last-child td{border-bottom:0}
+  td.who{white-space:nowrap;color:var(--green);font-weight:500}
+  td.tag{white-space:nowrap;color:var(--amber);font-weight:500}
+  td .ev{color:#9aa094;font-size:11px}
+
+  .note{margin-top:26px;font-size:11.5px;color:var(--mute);border-top:1px solid var(--line);padding-top:14px;line-height:1.8}
+  @media (max-width:1080px){
+    .lane{grid-template-columns:1fr}
+    .lane-label{text-align:left;padding-top:0}
+    .flow-wrap{overflow-x:auto;padding-bottom:8px}
+    .track{min-width:980px}
+  }
+  @media print{
+    @page{size:A3 landscape;margin:12mm}
+    body{background:#fff}
+    .page{max-width:none;padding:0}
+    .card,table,.stage{break-inside:avoid}
+  }
+</style>
+</head>
+<body data-page-node-id="kJBrOI1uoOdvIcRx4K8JzL">
+<div data-page-node-id="B5y6mxff9NMDRiDoTAX7JM" class="page">
+
+  <header data-page-node-id="YFAK3QvRXjJIuDlf36A3Ly">
+    <h1 data-page-node-id="fngxsDs3CxMmNonMz0eTYI"><!--pnid:Kl5JfzgDiVP09WURpgAJ2X-->现状流程图 · 开店筹备与运营验收</h1>
+    <p data-page-node-id="I5211PokeB8Y1gwqiG5Kq0" class="sub"><!--pnid:Qnc3UvQhMhpsW8EFDr3xkt-->青杉生活超市（虚构）· 新店开门前的百项清单 · 依据 6 位角色 34/36 条访谈事实还原，未核实项单独标注</p>
+    <div data-page-node-id="CehYzH1AT5vPw9t8w2MOvt" class="meta">
+      <span data-page-node-id="tT7Li7FACYcf5B8WArKSkQ"><!--pnid:BaFeCiPTR50c9eRpPj5kCx-->触发 <b data-page-node-id="Pnd1edorvgq5TrZKUblpeE"><!--pnid:8FfbNhFQHM0TIQRDURaUbQ-->季度新店计划</b></span>
+      <span data-page-node-id="YRMLtmy2XeVkV7MFg5eARI"><!--pnid:TnhLDAGQatIQMofP9hbAtE-->主链 <b data-page-node-id="vI5dWLhw5mNf7H4PLT7XgC"><!--pnid:h3ehDByka2ptHkV1TL29FT-->6 步</b></span>
+      <span data-page-node-id="jRFNwShBucvGPebxOR5PUX"><!--pnid:0Qf88ppSimT7AufGR5ZnZ8-->人工判断点 <b data-page-node-id="fceq7BEkFjHe0Q2dxx6cGX"><!--pnid:EO6NXYnppg4EMwKjgzfP9T-->4 处</b></span>
+      <span data-page-node-id="SCW5qEazPjKm7v9hLmaS8H"><!--pnid:ZiHgBtzk42sb8SjbuRD6DW-->瓶颈 <b data-page-node-id="gS7iUOO9mIuRNDtFUimbqy"><!--pnid:q9gOr6SuA7HQOnD6SIsQIc-->5 处</b></span>
+      <span data-page-node-id="GOwkGA5vKsJQYSryQtAviv"><!--pnid:HKj6nSIkfVvxL5qzlTqKEk-->异常路径 <b data-page-node-id="l0hdvzKB1l9lyvLFC2f0IH"><!--pnid:3f6LEl6uwgIyY8fJQtUNVM-->4 条</b></span>
+      <span data-page-node-id="Gn4sxK18qzczIRBFarVPNT"><!--pnid:VMH5W14iw8SZcYnSAvFFSE-->完成口径 <b data-page-node-id="oImldIhGnfz5IxhJHZJHPP"><!--pnid:laPWBJi94BUdvW9MhR7mPE-->供应商 ≠ 运营</b></span>
+    </div>
+  </header>
+
+  <div data-page-node-id="8cMPsY1T5933CnEJJ1i5Oa" class="legend">
+    <span data-page-node-id="GqEBqTJs8vl51l2DFXf338" class="lg-flow"><i data-page-node-id="gHCMaRyPNQWQ13hsOske7D"></i><!--pnid:zprwYaVvPLpCyNoj9h9ad3-->主流程（现状做法）</span>
+    <span data-page-node-id="MvC2uU5LD0xnv0EV4sQsR0" class="lg-hand"><i data-page-node-id="iRnVCc6ssjqFt7WiF9QQt5"></i><!--pnid:Y9N2MglRPCuMOJhW72yizZ-->交接单据</span>
+    <span data-page-node-id="MRj4xc4YXizqIVd6BXEvO8"><span data-page-node-id="jfNtrfOCQ7yDD3tmKTCTwl" class="lg-judge"></span><!--pnid:Ly9fTmBAo8abx8REFArjpG-->只能由人判断</span>
+    <span data-page-node-id="wyUdE8NxxQvPPCKANfyqNC" class="lg-neck"><i data-page-node-id="veQCcSyeD1iKKlFqKV7YC8"></i><!--pnid:oGekhE4Cm9DeWyo9R2kykD-->瓶颈 / 责任人</span>
+    <span data-page-node-id="D1IGTRYded29vIhygA2Gtq" class="lg-exc"><i data-page-node-id="TkoFC1ScKU3bRwhbm10spE"></i><!--pnid:42d56nIoNMgFPhqxqT2lvT-->异常出口</span>
+    <span data-page-node-id="d80RaEvX3qtCj0GbEzxnxh"><!--pnid:VAjyiRdTVzMDf7VyjYk8KQ-->证据编号 零售-0XX</span>
+  </div>
+
+  <div data-page-node-id="gDjsmiqmYghebT7sswkyYr" class="trigger">
+    <span data-page-node-id="peuzSRaXTCrk7Ttp52P9iK" class="tag"><!--pnid:GxmwIJomQImSKh5dO3C5AF-->触发</span>
+    <p data-page-node-id="tvpW7XiHjWCDmhVT86INCj"><!--pnid:AX2l4VMJR4zYHNmkstBO0r-->区域运营总监（顾明岚）下达季度开店计划：<b data-page-node-id="qzq63XbmJ0OJ2pN94Pp5Ls"><!--pnid:WMescwII9SkbB6CO7snVZM-->每季度 12 家新店、每家约 140 项任务</b><!--pnid:Hc9vKVdU7q0m9xmCj16eQi-->，筹备项目专员（唐映秋）拆解为任务清单并写清每步输入、输出与待办责任人 <span data-page-node-id="ElqHwvM9AfF1CbvgEH346l" class="ev"><!--pnid:RXv8zdqyhyLLJbh9DQc2WP-->（零售-006、零售-007）</span></p>
+  </div>
+
+  <div data-page-node-id="9xmss29aNpeJKolzHMiM21" class="flow-wrap">
+    <div data-page-node-id="CR9CYCeIId3CYGRIqiYaZU" class="lane">
+      <div data-page-node-id="X23Vd25idK99sBKFPrlzZ6" class="lane-label"><b data-page-node-id="Au5KMGQMnbGwnAEMT9syUK"><!--pnid:us5VdrVns3LEHSXozdpAyb-->主流程</b><!--pnid:WHjs0bCNWmrSkojju9gSYE-->现状怎么跑</div>
+      <div data-page-node-id="twdWBtleLdDGYsKP41qfP5" class="track">
+        <div data-page-node-id="amt9ti3kHdGSE8DBXj3q3f" class="stage">
+          <div data-page-node-id="96BaFuChutQwlOhH5V4qya" class="no"><!--pnid:tfma2mc0FfoAoxcc8AnJQz-->01</div>
+          <h3 data-page-node-id="NH9ng1IeVTMBHmCCLMzn0Y"><!--pnid:60xX3KOnDu6VyRfuZVAM3z-->选址确认</h3>
+          <span data-page-node-id="u7D6tPD1l2IhW9o3EyK2D9" class="owner"><!--pnid:ORCxzKSj4nfZHDV4Slxt8w-->筹备项目专员</span>
+          <dl data-page-node-id="B6MbeOOzBqvSzBXpBO6mEQ"><div data-page-node-id="y7dntRQGvEDwBYGxczuN9q"><dt data-page-node-id="k0IdluOOUHMw2bomp32C7p"><!--pnid:mzzr4rYcRV23BJPcdhnIFH-->输入</dt><dd data-page-node-id="DrDUdG5bAuRdgujbbDhrA2"><!--pnid:Ku6G2lxnAdWGyCnsGurNPJ-->选址评估、面积、计划开业日</dd></div><div data-page-node-id="R9CNVpqHXhQm8ZGxS2LhCV"><dt data-page-node-id="rR0aoi22HEwQKq2HakFtcs"><!--pnid:MVnVODuGfsTZEpiIwjwcwo-->输出</dt><dd data-page-node-id="qWmsEFEAPvaKQ5qixyRUHM"><!--pnid:yYQanSg2RIceMZClpJcpHe-->选址确认单</dd></div></dl>
+        </div>
+        <div data-page-node-id="DPt9HVo8G11LaDBv4WjC4Y" class="stage">
+          <div data-page-node-id="mFfndolxd0AcXbyi5dyJHG" class="no"><!--pnid:NY6G4FUKD6szRtZ2SXfYtG-->02</div>
+          <h3 data-page-node-id="OTPAYPk10j00nhnQkMLvcq"><!--pnid:zw3mZ2AbZCMVNUX9Lu0EmN-->装修</h3>
+          <span data-page-node-id="DF7kC3z2zoWbVWJGTGQupj" class="owner"><!--pnid:lDv32Y7Zin8ivF6ip6J7mt-->供应商施工 · 唐映秋核材料</span>
+          <dl data-page-node-id="5nZ6R8qtt7DJMBTPUxR5Y6"><div data-page-node-id="wH8ZQ7yF5JpbEY1bYTB1Vd"><dt data-page-node-id="IYuhbKzHnY9U0dKzij7ERQ"><!--pnid:AdFD8icHQMSBF7zf69HdLO-->输入</dt><dd data-page-node-id="6ozSpn5oCjLB1cvuMWjO6p"><!--pnid:a7QLMW8NBfvPcNzXuKR4Kn-->图纸、施工计划</dd></div><div data-page-node-id="iYWJQ7CBnU42m2AAgv9nqO"><dt data-page-node-id="sir3kw57BlwkK02iiJFRjh"><!--pnid:Dz6ts9ZD9rBbqrx6yxpsLE-->输出</dt><dd data-page-node-id="85GunYgYxRzcR6GCcnN1bh"><!--pnid:jm0j6RB5TrZIckM2tKRQWd-->交付证明、施工照片</dd></div></dl>
+        </div>
+        <div data-page-node-id="bnUKqN7pRkM0bFZ2oCqu1t" class="stage">
+          <div data-page-node-id="wTlQ3ExUpGxzvzsYTXhc8h" class="no"><!--pnid:BAjHS3Hw89VANxqfLDNnvF-->03</div>
+          <h3 data-page-node-id="gKybxVS70lgkKKOZILlRym"><!--pnid:bZqBoQGUNo2scp63kqq899-->设备安装</h3>
+          <span data-page-node-id="y1m41AGzCF1qF2iDG1qqiD" class="owner"><!--pnid:n9nx4wKeFKpX5XWsldJjcr-->供应商 · 设备台账（秦芮）</span>
+          <dl data-page-node-id="YkkWdxJgFclDyUFBt5tHVN"><div data-page-node-id="AzCh3RTSHl0bH6BqOboFTG"><dt data-page-node-id="44IVV74BfYvkFlq0AILSVz"><!--pnid:dHNxzdQS0MqMORIc7YkISM-->输入</dt><dd data-page-node-id="T8AOGfB90rdMmG5PHYcJOg"><!--pnid:Gr9fOi6I3udzSjHbU0MFId-->设备清单、电力条件</dd></div><div data-page-node-id="4iZz2nKG0WrCGyZkbA3wD3"><dt data-page-node-id="xsLFehQdgCVYOfe9PSDlpB"><!--pnid:bmaeKZPGyUajjrmy78xr66-->输出</dt><dd data-page-node-id="sunETE3AsxEgs9eGImGH4d"><!--pnid:rac7mOq8auR0MQrHwMLr3H-->安装记录、现场照片</dd></div></dl>
+        </div>
+        <div data-page-node-id="PJU2gCzfyU2Eme3ZGyMGKN" class="stage">
+          <div data-page-node-id="74J4IGGemIXM0lFxmmHNyG" class="no"><!--pnid:cyUmYCbTDY7fIivV09RAPU-->04</div>
+          <h3 data-page-node-id="OIKjmrGSoBmAnXcOHZCtSI"><!--pnid:YlREKOaTkZnSz7mTwey5fA-->商品上架</h3>
+          <span data-page-node-id="H8mGe4X7sLSXQxcI41d4JX" class="owner"><!--pnid:g2igsA2xBi5i7fzoAWcOyY-->店长（林亦舟）· 供应商协调（叶书）</span>
+          <dl data-page-node-id="J23tx5GigEsAt3A1TWuMyb"><div data-page-node-id="RzTLynKexNFigPwX8ocFVw"><dt data-page-node-id="xGgowgfXsF5DNlOt60F9x3"><!--pnid:1FdmWAzVs8eJg4inLLVGaE-->输入</dt><dd data-page-node-id="TvPfnzmCsCSYiNAJT0oGFS"><!--pnid:QrV0buiPHww0CFSZ49LT0o-->到货单、冷链条件</dd></div><div data-page-node-id="7aiu9Lg31IbQDZVm3vPFpt"><dt data-page-node-id="n2hgTopcZ0eLzLnlgARXsj"><!--pnid:yVdfbrTmnyXVfUGKN615gS-->输出</dt><dd data-page-node-id="2fatBbtKIQs4N9KdoZLU0N"><!--pnid:OCseaYb1GDsHVE9MWNTJkK-->上架记录、库存</dd></div></dl>
+        </div>
+        <div data-page-node-id="m4aGqnhRTWaHX15woz14Q6" class="stage">
+          <div data-page-node-id="7WoiPtzVagRhRuw2cF3FeA" class="no"><!--pnid:PMqHtAkehkicP1qyifzJ4o-->05</div>
+          <h3 data-page-node-id="LL3wBHxrcT2YBQUXv92Sz1"><!--pnid:nyqQsHDgh622zKqbwDyHFl-->人员培训</h3>
+          <span data-page-node-id="G6SjVy0mZQtnAr3DJYaXEQ" class="owner"><!--pnid:OKUccZbdbh8yKomtyHYWNJ-->筹备项目专员</span>
+          <dl data-page-node-id="1GD9AgRZk55Gv9qsN4HkBk"><div data-page-node-id="6jID29LupRip6rCoQu2Ekj"><dt data-page-node-id="Ilj4hljiT6t253qoXty2qV"><!--pnid:EmLIEDExymIy7aEnqXKF1R-->输入</dt><dd data-page-node-id="npkHiXGvQEdSKgcIaMpDAu"><!--pnid:dUNinQuomw9nqeNIeZCOqX-->培训计划、操作 SOP</dd></div><div data-page-node-id="9ctv1FatrebW86LwmD1AfE"><dt data-page-node-id="jKlQu32QefogrrkcuzljaC"><!--pnid:0LYgHGDp9HmXGRXiFVBY9w-->输出</dt><dd data-page-node-id="OxTvMti8bcVmS3HoL3s5EH"><!--pnid:xSa1skXf0NJRbSudb8IJHa-->培训记录、签到</dd></div></dl>
+        </div>
+        <div data-page-node-id="wMuDMMtS4jHS0uYSmz43HD" class="stage">
+          <div data-page-node-id="dEvrxmImDNunOND7lJ4i7N" class="no"><!--pnid:XtBvHNLGKMaImDQgCpJZSb-->06</div>
+          <h3 data-page-node-id="kkj6BZGdQCvC4O4XLEgcT3"><!--pnid:0OskNUC9excHaHZz5iLy99-->开业验收</h3>
+          <span data-page-node-id="HmQuy2cbGmJNS7cc4p0LMA" class="owner"><!--pnid:gTzTDbYdt3BnlU1lcy0BAA-->设施安全经理签核（傅景）</span>
+          <dl data-page-node-id="WHHH8SHTvVJmsZMqfRMRG0"><div data-page-node-id="BbSNw2ixAQDr5xnHEGzUif"><dt data-page-node-id="8XjECTnVrowcZ71353iZA0"><!--pnid:mvOnl5oWjBccopsxKuj3L3-->输入</dt><dd data-page-node-id="UBUewzQyhT7KVlbGsfz804"><!--pnid:PYZSFNPu3oE7WlGjBm9YS6-->五类材料、依赖清单</dd></div><div data-page-node-id="6qgSkz4hFEMBgDf4n6oa7Q"><dt data-page-node-id="Rr8DOhRIyKVS51IxtpfdOu"><!--pnid:WKkLfZEyWYGKahNHkGcKhA-->输出</dt><dd data-page-node-id="OF7aOdIBClHjXnxZkVR5rS"><!--pnid:5Mvzix2W5iOPO7rhwUON4j-->验收结论、准予开门</dd></div></dl>
+        </div>
+      </div>
+    </div>
+
+    <div data-page-node-id="NLoJHNgTxFmBSl7nks8UDI" class="lane">
+      <div data-page-node-id="483RAGI1DfYYisoZjeFtqe" class="lane-label"><b data-page-node-id="TrXOnHRbmh26FOreS71bVH"><!--pnid:aXUu74E5DXH52ZwaPmVymN-->只能由人判断</b><!--pnid:pI4WdYBWC5VecP0fFKvWAH-->不可交给模型</div>
+      <div data-page-node-id="TvSiYTkwszg8bjyw04nBdT" class="track">
+        <div data-page-node-id="yzYxyPtUxvJ0OeD4EvPs6q" class="cell empty"></div>
+        <div data-page-node-id="53oWn6A6IAlyr9VfdNjxKI" class="cell empty"></div>
+        <div data-page-node-id="QfHzreKKAGTQ4YbAjHPXXo" class="judge"><b data-page-node-id="2Oqq6GyLnXyTwPsPJ9KRLn"><!--pnid:1mL0Fkw2xeNUd1f3XQFKbY-->消防 / 用电 / 食品验收</b><p data-page-node-id="OhBm2I3bzpFAHZOtzOXEJs"><!--pnid:nvYXRU9x5bCG0cK2O675Yr-->不可跳过，违规项不得标完成 · 傅景 <span data-page-node-id="BrdQDsUMD2G2B31a6D3O90" class="ev"><!--pnid:ir0tOhPoqV6BWJd0lz0Qmd-->（零售-013）</span></p></div>
+        <div data-page-node-id="IH7G9gdf8lUqedTcw0FMEG" class="judge"><b data-page-node-id="8hlXhe28Er4iI0mr1LHaDX"><!--pnid:tk9VV63pFGi96t6D0bhqPN-->可临时入库 / 必须拒收</b><p data-page-node-id="8X0eWJZDMm4ZOSXjnvabIj"><!--pnid:YZdZ9Ad9bD5qJ6obC42AmK-->判定人未定，属待核实 · 门店 + 安全 <span data-page-node-id="4PdqCEwZMnAGPSoh7sd0xT" class="ev"><!--pnid:ymfiLvuVlvPgeQioa9ZCRz-->（零售-032）</span></p></div>
+        <div data-page-node-id="6PsHIzEO8QKzGgjkCMRhUv" class="cell empty"></div>
+        <div data-page-node-id="IdkMUMRHqYPvRWX4fWwfAD" class="judge"><b data-page-node-id="ir4ivWekdWD29qJ5Zudqhq"><!--pnid:nNjY1VuoI5LqcgfbxZAqgD-->验收结论签核</b><p data-page-node-id="UOeql5S3KSSDNAB3LLmcV5"><!--pnid:HRrW9Z8NPyWqeJQREIhz7h-->可一票否决；筹备专员不得代签 <span data-page-node-id="MGNAFCNHmK4eK0iEqQdQXR" class="ev"><!--pnid:RmroXotot9Aivx24h7fY5E-->（零售-009/020）</span></p></div>
+      </div>
+    </div>
+
+    <div data-page-node-id="aNISTtehCGDJLGYAxNvhgo" class="lane">
+      <div data-page-node-id="xEIHwAosTgZHYRK69MoRBF" class="lane-label"><b data-page-node-id="pxlf9EwVHe3AlYLsmR6Duh"><!--pnid:YpO1vdyhb9AdznPOu0A2b9-->瓶颈</b><!--pnid:6ccJzqbC7R0GRgkMWUZI4M-->卡在谁那里</div>
+      <div data-page-node-id="4jQoJZxdi6xK0LrX0Wyj3Y" class="track">
+        <div data-page-node-id="c1gTmXf8TbAGmcisf5AIBf" class="cell neck"><b data-page-node-id="y77QyDs0G4BRl93RCf1bhb"><!--pnid:itpCKbtgrfwnJA7G3CKsiK-->工期口径不统一</b><p data-page-node-id="tDJX8iZx865Fw2pJsscajM"><!--pnid:k8MTZUAMeTie37teS9xIok-->计划开业日与实际开业日分散记录 · 唐映秋</p></div>
+        <div data-page-node-id="txlZh2DVhgsU763OTZH6c7" class="cell neck"><b data-page-node-id="fTvrQs2q9AOPjbcepItu8t"><!--pnid:tbiPCrqcfKD5GPLK9sMADM-->进度只活在群里</b><p data-page-node-id="pPgfAJtY1s22AUxa3XBZlq"><!--pnid:C1LkPuou7PlrGRwzoNDbhb-->关键说明留便签/群，未随单据交接 · 林亦舟 <span data-page-node-id="CrqLvOBcHUdmDHh506oERH" class="ev"><!--pnid:avP9r72QrB5Z5ugaUvAqXG-->（零售-023）</span></p></div>
+        <div data-page-node-id="GFWFEyDLxzWphkk0WbQxCn" class="cell neck"><b data-page-node-id="od4RFgLu77anPZwS9c7qA2"><!--pnid:iSQiNQDtDDhLHUqsnthVpG-->字段缺失</b><p data-page-node-id="SgNZcxUIcZDaUqE3PZNn3X"><!--pnid:B1jDoSX4hVgsSWbdLuasYq-->照片无验收日期、负责人无统一身份 · 秦芮 <span data-page-node-id="ueNELAE3hGFnfCjE8V0RzV" class="ev"><!--pnid:iA9oVlRN9yJQXmLgvIumdI-->（零售-011）</span></p></div>
+        <div data-page-node-id="syQecmCJXFU6SLEinxxPEJ" class="cell neck"><b data-page-node-id="8uBBslQ1do5MCmBRGBSU0J"><!--pnid:u5zJy9s1Lja5lnnHIBmMO6-->“完成”定义冲突</b><p data-page-node-id="paumRiKJAKNvzf50lp9qmh"><!--pnid:McDAvvvtzfA1mb1NwnD0s9-->安装结束 vs 可营业，验收责任不清 · 叶书 <span data-page-node-id="PKo0W6LxtNGOC8FhVHLx6S" class="ev"><!--pnid:rUiOWLjev0EJyE1YvS9xIS-->（零售-016/034）</span></p></div>
+        <div data-page-node-id="l22VzzcHN9mjocxtH0E64V" class="cell neck"><b data-page-node-id="8IfE228sUYJMr46mEWfxS4"><!--pnid:l5LUaDpaIx1TPU4ZFYjoOt-->不能离岗补录</b><p data-page-node-id="CFaFeZe3RGC8Cuky1UNjUM"><!--pnid:rKR83XPYf9CWZAM50GAvI1-->高峰期只用现有终端，草稿需暂存并显示同步时间 · 林亦舟 <span data-page-node-id="idCJIi9tE8HpU2bwJR65pA" class="ev"><!--pnid:IRPYNJKel7bZtCk5qYpi1b-->（零售-022）</span></p></div>
+        <div data-page-node-id="FE0U4J5hYhMubeGw78ssgh" class="cell neck"><b data-page-node-id="qFIutMTWDG9aVxqLjY2NCb"><!--pnid:3Qc33PYBDgqKQDyMiJqrum-->专业签核单点</b><p data-page-node-id="Ex5XpE0NpZJiOeWdkzFgBO"><!--pnid:n8v86jpfYAbFcPM8Y5wKWZ-->三套系统无统一状态视图，签核靠人串 · 傅景 <span data-page-node-id="OrEyPIIEu2T23Q6BuQ0spQ" class="ev"><!--pnid:EoBx5H0rNCowhPwIG9J0wL-->（零售-010）</span></p></div>
+      </div>
+    </div>
+
+    <div data-page-node-id="mKPBoYsXLe1AcMdJVJC6a6" class="lane">
+      <div data-page-node-id="kGKtdwZ2T7Ng0aBaAl5JgQ" class="lane-label"><b data-page-node-id="obIgPpwBwv9TrfdDadFWya"><!--pnid:JHgxEQyJaRy6ytxI3zMnnk-->异常出口</b><!--pnid:oxF8skc9ahIhHV1UFe12Ij-->离开主流程</div>
+      <div data-page-node-id="42sQiC2V373Dd5UlJhszmu" class="track">
+        <div data-page-node-id="KZ8Tj54QWweX0ZQbZuor1Z" class="cell empty"></div>
+        <div data-page-node-id="pMGgVrGlmqlqK4Wu91AACB" class="cell exc"><b data-page-node-id="7YtB2TYK3GMFZrSzmDgiCa"><!--pnid:GxznGx7RD4OA51oM1Icx9q-->→ 异常 D</b><p data-page-node-id="YOb2nhFY7NZEE3DO8y17WD"><!--pnid:JiLnvtmdcD4xmoAfoJOW5d-->群消息先行、事后补录，补录漏项</p></div>
+        <div data-page-node-id="qHCfhNJEsGE21REa7qB9su" class="cell exc"><b data-page-node-id="0nQOA7Obdb1nQJqgNf1PUY"><!--pnid:CSM71bjlffXtiZx5OhdF5u-->→ 异常 A</b><p data-page-node-id="zAdKrSqgiujyY9Lhun0D8l"><!--pnid:5EzGFq8eUlxWjS6GM0LJxd-->电力增容未验收，生鲜到货无法入库 <span data-page-node-id="KYXAAnSW40wnyVKneC44To" class="ev"><!--pnid:15bjAOVz00u50MfXRvfNOF-->（零售-005）</span></p></div>
+        <div data-page-node-id="s9JyCyifjEwcPNrIVWbUXf" class="cell exc"><b data-page-node-id="Kgl7idUbaXcYG8gAR9p34K"><!--pnid:pEE6JQ9rYBRnijvsrOxCaC-->→ 异常 B</b><p data-page-node-id="CUbnsQ83EGpOXRzT1jGozv"><!--pnid:FxuoJJFymMnZPzosVAIbzd-->资料缺依据、两版本冲突 <span data-page-node-id="wAI4zJqlTiaRLEdTfSamg8" class="ev"><!--pnid:7LmTLUKPCLNT9dWEPL8uH5-->（零售-026/032）</span></p></div>
+        <div data-page-node-id="2jKqh8prUo1NdKZkexUFXd" class="cell exc"><b data-page-node-id="DtdCKges6FLlEABGXJZdOw"><!--pnid:ROepK3kIYkojYrswZeTtl9-->→ 异常 C</b><p data-page-node-id="M4qxkOmDWJ2f34xm9ZOjha"><!--pnid:BtvYX2ILBN6poiBw0VUzpT-->接口中断，只能读快照 <span data-page-node-id="qE0pThb3TrLfme7GiAD5VJ" class="ev"><!--pnid:atGxXUjTrvNr5YnPLyvnzd-->（零售-030）</span></p></div>
+        <div data-page-node-id="0UvJzSkLOcY9kFjWnQ9EBO" class="cell exc"><b data-page-node-id="AIZXxNm0v4U6A2ZMMDHaoM"><!--pnid:6mJUoFtzQXysdjBIGfESpF-->→ 停止条件</b><p data-page-node-id="8QCpAzj69jS7e8E2hPlojP"><!--pnid:yQnDaWxZdFVXsGk2jKiDFN-->触及安全红线即暂停、负责人复盘 <span data-page-node-id="0Qm3zzyvjQpZ2dQEEQr8WQ" class="ev"><!--pnid:I2LN24vx8P7DkpDnNMjyxd-->（零售-015）</span></p></div>
+      </div>
+    </div>
+  </div>
+
+  <div data-page-node-id="wWyP2uATFAXxkLrIJ2HCHx" class="handoff">
+    <b data-page-node-id="ZPH03Kk5oumBdYODMoMfFJ"><!--pnid:sIEhG7mk6mQNgbuCB1O2z8-->交接规则（每一步都要过这一关）：</b><!--pnid:oLjtT1G0werRQX6d0uTL8Z-->交接单至少含 <span data-page-node-id="a6bUOEGwOsndhi0zZrXV5u" class="five"><!--pnid:fqOyrq1HI7ZQNr4VWrhQa0-->业务编号 · 当前版本 · 处理状态 · 未解决事项 · 接手人</span><!--pnid:FLM8zc0r3YhJovNR8KCB4S-->；<b data-page-node-id="duvZvAs7wzZbcbdC0tGDiJ"><!--pnid:bbmSfJK63y082SPqh9cvT2-->对方确认接手，本岗待办才算结束，仅发消息不算完成</b><!--pnid:ZFWUcZzHdtPPh57GHUCYSV-->；退回原步骤必须保留原因。<span data-page-node-id="qrHzcYiMcDAFBGMWKGCOgE" class="ev"><!--pnid:Bn4dpfbY1ujgIpAJr0Ecxw-->（零售-025、零售-007）</span>
+  </div>
+
+  <div data-page-node-id="0dbytxEusSk9o3QWPFvxkR" class="output">
+    <div data-page-node-id="AgS1ByK6ZUcqfwh6WjLxDS"><b data-page-node-id="WTn8WfH4RZC7gXCKPK4zyK"><!--pnid:xmZ3NOWU5MVocB5LUvld8h-->输出</b><!--pnid:aXLK85Dlw3WR5oYeIHG0Vm-->开业验收结论 → 准予开门。工程验收类签核不在筹备项目专员权限内，AI 只做依赖识别与筹备提醒，不代签验收 <span data-page-node-id="dSntFOLKAWBA0pVhGC0NPA" class="ev"><!--pnid:RQvATcCfWJaeCQPsTZdjdx-->（零售-009/018）</span></div>
+  </div>
+
+  <h2 data-page-node-id="IWQ7pcFiPqPJzgi7uQBVo7"><span data-page-node-id="PcXoHTKPFdpMkBodqPgDEk" class="n"><!--pnid:jrx6h7OSzhiOuBdWPlABID-->02</span><!--pnid:IQFivyQAx6K35bencslpgN-->异常路径：现状怎么坏掉，应该转给谁</h2>
+  <p data-page-node-id="xFMiT1sqHKFhzlOE6ugtFI" class="hint"><!--pnid:W1dJza3QntqskNO7zeRfY3-->四条异常都已在访谈中出现过；转人工时必须标注触发原因、接手人、确认时间，不能只给一句模糊提醒（零售-032）。</p>
+  <div data-page-node-id="VBCS0AbALXdcTDV1VekiuP" class="grid2">
+    <div data-page-node-id="pNdF79L58VNAMehAowRQFB" class="card">
+      <h4 data-page-node-id="FM0g8ZeMHsLd4RKlGnsz2F"><!--pnid:w9nkVG5j1uAkUlbiLcHpgY-->异常 A · 设备装完但电没通 <span data-page-node-id="cZmwgfAc1S53jTWB9Rhm6Z" class="pill red"><!--pnid:mghqCaRBX5TshmpyUyaAvB-->已发生</span></h4>
+      <p data-page-node-id="weAwwXAAzqqjUtViyIxmrg"><span data-page-node-id="e3kqfanU11XLptWkglNXE8" class="k"><!--pnid:AZSWTDu4YknXRpeGoktsiZ-->触发</span><!--pnid:yLGECgXEBNHDhqg4izhwJZ-->冷柜安装完成，电力增容未验收；生鲜货已提前送达 <span data-page-node-id="i7Nav5ASMULMEi2WFQEG0O" class="ev"><!--pnid:AaoPCKxjkAd0mXXLvzqR9B-->（零售-005）</span></p>
+      <p data-page-node-id="Wb3kfR3k1LuNr4eitaDkSS"><span data-page-node-id="4UpulGjO4fMbQ54fFqz9HG" class="k"><!--pnid:6YN7nwLrV4tuHLZD5JZkAe-->现场表现</span><!--pnid:nxhrrH9te3WQzoCgTFi68P-->装修、设备、商品三个群<b data-page-node-id="Gn87AFGgsiSJr9dSGtXHxu"><!--pnid:O0D1Sthd8iMwxu0DdXngYn-->都显示“已完成”</b><!--pnid:RmRsrtq7hcvYs96EQdrfq7-->，店长到验收环节才发现卡在电力，货在门口等，只能临时找地方周转</p>
+      <p data-page-node-id="4d5IuR8OTBddY1EPgbKHJ7"><span data-page-node-id="KwKqpYKurhxiH1FVTSxBGD" class="k"><!--pnid:pWQXK0SzRggsG37lGqFFoG-->现状处置</span><!--pnid:FUJAxmFUmUUIqq3enwkW7B-->店长临时周转，事后补记录；无责任人、无签收时间</p>
+      <p data-page-node-id="w2rFsRFP76ZvgKu6YrlmQ7"><span data-page-node-id="dZ4vnJw48gBo2zByHiNGZ1" class="k"><!--pnid:SOrPrh5MKdZiSISBzd9UHo-->应转人工</span><!--pnid:qkUechQoSNgDTvZW7eQitd-->安全侧判定“可临时入库 / 必须拒收”，标注接手人与确认时间；判定人尚未核实</p>
+    </div>
+    <div data-page-node-id="aZh7w3HdAd5DYFbr9Wdfj2" class="card">
+      <h4 data-page-node-id="f363TtS1tZfmNrQ5EDZZ3F"><!--pnid:259KaPw9B9All7ibqGHbWM-->异常 B · 资料缺依据 / 两版本冲突 <span data-page-node-id="zCP7LAkxc1y4bwFaKtWp04" class="pill red"><!--pnid:ZokHeztAFcMlO80dFp0ZKU-->高频</span></h4>
+      <p data-page-node-id="Zxjmf6lcD0RVVfalrAwfjX"><span data-page-node-id="VrfzkCSzjQk3Fn484mMQWy" class="k"><!--pnid:I30vKjz6hMm3deCI8rADx8-->触发</span><!--pnid:DAnbjXMSb3nrdQ7tmmILCV-->交付证明缺失、同一事项存在两个版本规则 <span data-page-node-id="AjhC9ROxviCs5SHWbb7JTl" class="ev"><!--pnid:j1S6xzn8L0WzSneyF6MIys-->（零售-026/032）</span></p>
+      <p data-page-node-id="h539pSCIdH6rxKBkTfoxm6"><span data-page-node-id="e1ujOEIbHK1hNPB5GIPLkZ" class="k"><!--pnid:YQUjhTYaa5LIh5kl2kz1kz-->现场表现</span><!--pnid:SetEp72qDUdM1bdTZHTMLI-->筹备专员不敢自行合并条款，怕选错宽松版本承担责任</p>
+      <p data-page-node-id="ApMuVciCY8M26NuQODc4hD"><span data-page-node-id="5uLn3G4CwYWhJJTX4XDU2N" class="k"><!--pnid:FQQoPdnB3rCDPQVzty5id0-->现状处置</span><!--pnid:CmTx7WOnrBBkp5c9sWqVdf-->两版一并附给设施安全经理裁定；退回原步骤并保留原因</p>
+      <p data-page-node-id="zA25ENKrlSnWhHEc3UdZNB"><span data-page-node-id="8OcP329zJdojfmIYiFcCn4" class="k"><!--pnid:1LaXaryQ6xzH0rrBsYnJ9U-->应转人工</span><!--pnid:ViNKkjoOEEX9gmZ7IgmGfT-->傅景裁定版本；裁定结果要落进交接单的“未解决事项”</p>
+    </div>
+    <div data-page-node-id="SbeDPfOdsoVGJPnk0Zdy9H" class="card">
+      <h4 data-page-node-id="jEkMIKt8mXmCmpk2BxFHeK"><!--pnid:xxvAQAnrwPORreMVvYN0yT-->异常 C · 接口中断 / 数据过期 <span data-page-node-id="g6XP72pBgXBgNvpCtomamd" class="pill red"><!--pnid:Kt6JH5TxSX0GSgDX1OBnM6-->兜底</span></h4>
+      <p data-page-node-id="OAl5QNZGRjMjHzYqenUfsd"><span data-page-node-id="reY0X9lNBXkMKHopvTe4nh" class="k"><!--pnid:OemAzlH0s6efjBkCnfm5lq-->触发</span><!--pnid:j2azou4MvNIs1yg9ik2se6-->关键系统不可用，或状态超过一个更新周期 <span data-page-node-id="C32S8ZkQUM3EhR90Mc2wWo" class="ev"><!--pnid:p6kP4x2H5ecmi6o53iPcz8-->（零售-029/030）</span></p>
+      <p data-page-node-id="MJBpu4MzKhiqc5wYl2MgrT"><span data-page-node-id="B5IUbChC1M6cwfExOZ194B" class="k"><!--pnid:q4S1MOOLFetMgn8YOCmCm1-->现场表现</span><!--pnid:oms3vx093IbLoewFnzLFuk-->店长看到一个“看起来正常”的旧状态，误以为可以推进</p>
+      <p data-page-node-id="UIo5s2fdrTtqNRcMPHiSHM"><span data-page-node-id="SjZJL4zp6vByGivV8HlueT" class="k"><!--pnid:BfmTflRntRXAdgSTBTuDr3-->现状处置</span><!--pnid:IHHO6YKs2zmaRh0uyzaD4p-->用带时间戳的上一份只读快照，界面标“暂未更新”；重连后按业务编号去重补齐，人工流程照跑</p>
+      <p data-page-node-id="Fr5mR5GV6ppxMLufbBZDy7"><span data-page-node-id="ZSKtz7CLFMsgCsOEZX5yuK" class="k"><!--pnid:dRiSludzdoFnRRz2BUxtBT-->应转人工</span><!--pnid:lHc865v8AhD8qLrkT6NIvn-->“暂未更新”期间哪些验收动作必须暂停，须由傅景定；快照能否作为验收依据尚未核实</p>
+    </div>
+    <div data-page-node-id="I5kZMT7GQWwZW33TLJHxRk" class="card">
+      <h4 data-page-node-id="NlbbHqEjbFSDglZgWdIaPH"><!--pnid:CiFFqfja39iBiZAhiDtGx1-->异常 D · 群消息与便签先行 <span data-page-node-id="eGMwDSIwoZC17BBDun8Rnb" class="pill red"><!--pnid:40qI6WFvcuoMCMSQWr7KwD-->系统性</span></h4>
+      <p data-page-node-id="p4i9QCGScOJpJDERrRdEXN"><span data-page-node-id="WmFC4gz8VnEUjX6hwekqX2" class="k"><!--pnid:7isrutIQVN2c6rinIGyjCg-->触发</span><!--pnid:c4pKfT5BTZxjbDZO7f2UxP-->高峰期不能离岗补录，正式记录填得慢 <span data-page-node-id="7aspHcCCPQvXvm9ZgcmWGi" class="ev"><!--pnid:pGRAAqYQPwZHPYXkmQIQRW-->（零售-022/023）</span></p>
+      <p data-page-node-id="4HCspSSSXIU1fxoGBiqLAN"><span data-page-node-id="AkKA4MRgVhag6e2dEAhFlf" class="k"><!--pnid:Gqz4maUOyomvEIro6IqlOc-->现场表现</span><!--pnid:x8Y2Nzr7LVt2bJJUUgppGa-->关键判断依据留在个人便签或群里，补录时漏掉，接手人看不到当时的理由</p>
+      <p data-page-node-id="ObZ7LOkB08BDMF0fC3z0CX"><span data-page-node-id="fDhdDaAELVoPxQf2kOB7Qg" class="k"><!--pnid:C8rd3vjmKsXAz9XzegymVF-->现状处置</span><!--pnid:ub8vlUlLxwXg3IKiT9bctp-->靠人记、靠人问，每周约 6 小时用于拼进度 <span data-page-node-id="8HTXcfWV7dzjRYazcJQSPF" class="ev"><!--pnid:lhdwyjpsoKaRnYuthhJxdW-->（零售-006）</span></p>
+      <p data-page-node-id="DwKM3TRZY6TWTX0tvVXbXu"><span data-page-node-id="UoSKwniktLtWu39BCf8bHm" class="k"><!--pnid:l4GY3sB1lORmrr4Fmv1h4E-->应转人工</span><!--pnid:YBt9qLSNLKBzKV7ABoIbSa-->便签内容须能挂到对应任务并标来源与最后同步时间；字段规则由唐映秋、秦芮定</p>
+    </div>
+  </div>
+
+  <h2 data-page-node-id="5vomhNTR3vNumOS1AxszZD"><span data-page-node-id="NUR0eBK2WGD9yGJEdtrPLn" class="n"><!--pnid:QWDHwU0dpMyfUEWlPYE7ZU-->03</span><!--pnid:fI94gMlhK2owupJVD2082g-->瓶颈与责任人</h2>
+  <p data-page-node-id="vWKQw6AoFFn4GVUMXFlrj3" class="hint"><!--pnid:nJpuf12EFwFXg36gIJGE3A-->按“卡在谁手里、为什么卡、证据”排列；这四处是试点要动的，不是重构整个筹备体系。</p>
+  <table data-page-node-id="003hrS3iZOjHMuelA2Mzvr">
+    <thead data-page-node-id="OFvxU6pZqHyvyVxDlMGaS2"><tr data-page-node-id="9X0j5O5f3EjpgtrES9GP1m"><th data-page-node-id="n2FogQ6ET3dV5par5LWXTL"><!--pnid:4fYLEB1s2tL8nTKfShxmGm-->瓶颈</th><th data-page-node-id="A1Wk6yREebbw0uRLout47v"><!--pnid:xeoRpuPUj79Ug2JQnnvtdJ-->卡点描述</th><th data-page-node-id="MM134efPdvjTjV0Cwv2Q6a"><!--pnid:nNXRsO8G7ypnq7hOUKlopI-->责任人</th><th data-page-node-id="5nqi1kaCWrb9cerbRhuQOM"><!--pnid:D9PpfccKrAUwv4z1OGanH2-->证据</th></tr></thead>
+    <tbody data-page-node-id="0CnGeCLUmN2fIBpaz5R0Wj">
+      <tr data-page-node-id="485RcKRMkYL8bRHwEf8cts"><td data-page-node-id="XDllmgcojCNY4qKQClUHD0" class="tag"><!--pnid:cuOwykGmrOcoiE5UqhFKyT-->跨群依赖不可见</td><td data-page-node-id="OpOIc0jEcsjy6s1Vz3ME49"><!--pnid:oexc5TXlMqe5GPJOZpIzqm-->装修、设备、商品分属三个群，店长判断不了哪项延期会卡住开门，只能逐群去问；每周约 6 小时用于汇总</td><td data-page-node-id="lgqGE4dO4ghEIRzWgHkRWn" class="who"><!--pnid:aaneopakWnwMdtKQebw3lr-->林亦舟（店长）</td><td data-page-node-id="pCeFu3XUGzAw1TcrUzESrD"><span data-page-node-id="wX8k9tEuOn3eZFLJPaDaD3" class="ev"><!--pnid:AE4lxeWdWYFg1zRglS37DM-->零售-004 / 006</span></td></tr>
+      <tr data-page-node-id="9ogr7QyVSNs4jABY60cU3h"><td data-page-node-id="1ob5KyTC7qC5KhK5Tm4Sin" class="tag"><!--pnid:VbA8IgHzTXL2VmpARTUlbk-->进度靠便签与群</td><td data-page-node-id="2uQumZEVnQYepLgWyRZ3dN"><!--pnid:z8jefix8TXUJLLNdM4rAYU-->关键说明先留个人便签或群聊，事后补录，不随单据交接，接手人拿不到判断依据</td><td data-page-node-id="k2RUOtyuPMiPcLQz4a7Cem" class="who"><!--pnid:1tmAioqciLGp896VWRo4wo-->林亦舟 → 唐映秋定字段</td><td data-page-node-id="Srxxyx5cxUUGkPF46XmV8w"><span data-page-node-id="T8xOCVvDkz9K9sdDHUyTND" class="ev"><!--pnid:6pPz84j5kZZhCZ7ps9vFZW-->零售-023</span></td></tr>
+      <tr data-page-node-id="RGTAGcZEvoUZNfKNBuOTlf"><td data-page-node-id="KOW7l8icib1onVBwGiLhuy" class="tag"><!--pnid:oiZGDwafZB7iZQEJbd9sGc-->字段与接口</td><td data-page-node-id="NBb10gOpGVfd9j9DXJ2hi3"><!--pnid:cHZko0Z7Iha7ZKRQGreivF-->三套系统账号独立、无统一状态视图；照片只有上传日期没有验收日期；负责人缺统一身份</td><td data-page-node-id="BaGeFYwfKud9m8r8tXuqf3" class="who"><!--pnid:nXEw5R0Nx7Yib8ykUXNP3H-->秦芮（平台工程师）</td><td data-page-node-id="x6am2dYLQrAKXtgn4gtLsP"><span data-page-node-id="53cZwEpbh7auppFkSNAAuH" class="ev"><!--pnid:pgHRXD1E2juLhSBlgxo8d7-->零售-010 / 011</span></td></tr>
+      <tr data-page-node-id="nDMlGE90anRwtvXHjHn3sS"><td data-page-node-id="VjUGrNIaFfB76EjdXptTgc" class="tag"><!--pnid:gAw7RU39r1DLc2YBzF2RHK-->专业签核</td><td data-page-node-id="nMubQiqvDsoMhh64Bzssas"><!--pnid:Se6nzgPag7EUc5hjlChqqR-->消防、用电、食品设施验收不可跳过，筹备专员不得代签；工程验收单点压在一个人身上</td><td data-page-node-id="BJGqq37RrrBiQb4vQNE0v7" class="who"><!--pnid:0b5dF97WuUtFuIWbGV9cYd-->傅景（设施安全经理）</td><td data-page-node-id="tZOkqAAZsg5aoBffevpYY4"><span data-page-node-id="5yweC7JkDakZIypKjX5jdQ" class="ev"><!--pnid:UJglHcEZPvcy8QMEPP5FO3-->零售-009 / 013</span></td></tr>
+      <tr data-page-node-id="bvII4kIErApgdPslMj8vsk"><td data-page-node-id="mKuXsT4QpDHcvHwAiIgCbl" class="tag"><!--pnid:yI7u0WoibHgqie6e761TTw-->完成口径冲突</td><td data-page-node-id="yBI29oGJiQpTk6Bq1KGmGI"><!--pnid:7i6qEyGL2oO3QkXg66gtDt-->供应商按“安装结束”算完成，运营按“可营业”算完成，验收责任不清，反馈闭环断在交接点</td><td data-page-node-id="xhOOcy77ArYlRXWUETubtw" class="who"><!--pnid:EwpfzZ4cVlaZfhztLf7TjB-->叶书 + 唐映秋 / 傅景 对齐</td><td data-page-node-id="7e6whPv5ZBQHVGmGkcovDe"><span data-page-node-id="kGkJI4UIHmhWaMQStSDOuA" class="ev"><!--pnid:njek1yPPE6BGBKij8hkfMX-->零售-016 / 034</span></td></tr>
+    </tbody>
+  </table>
+
+  <h2 data-page-node-id="t2EaaKogCKJsrIXNuWOCpl"><span data-page-node-id="SO53peMJSHPy258YHwyAFQ" class="n"><!--pnid:LXBSiaYXMOoKKCMJRfS7sA-->04</span><!--pnid:5IVo8VZECMjj52rQ5g7mti-->理想流程 vs 现场做法</h2>
+  <p data-page-node-id="BbegDml7BSEHbWq7dOhCPP" class="hint"><!--pnid:8vCnhvItTMuAq2kBhxoKyr-->这张图描述的是“现场怎么做”，不是“应该怎么做”；两者的差距正是要验证的地方。</p>
+  <table data-page-node-id="HS2SZO7kg6rDn3CAHQQtHf">
+    <thead data-page-node-id="GaRnOeAkMKj56YIfAi5LhG"><tr data-page-node-id="mQ6p1JF4hHiOMvEBeX9xXw"><th data-page-node-id="0lomn7kAlorrQXyvSYOWg6" style="width:110px"><!--pnid:ZcfnMnSTY481dfMs5Pn3WN-->环节</th><th data-page-node-id="dY0lhhQASV8yxjpv4XQLY0"><!--pnid:IIvOMmu2iRFEPCafVOfbzw-->理想流程</th><th data-page-node-id="41AGa5SggCa5CumQNNB9lY"><!--pnid:O16mi2pMmLQ5boRvuFeMqB-->现场做法</th><th data-page-node-id="vGXoXkfpHvMUBmDEBqU9tY" style="width:150px"><!--pnid:kXvbcGGSPpf1eUnfPIgNFN-->差距意味着什么</th></tr></thead>
+    <tbody data-page-node-id="tAh4pyE7HJsAOlWlVXuIhO">
+      <tr data-page-node-id="piR6dTVgETCaNy6m0ogpcc"><td data-page-node-id="jXW39L5chTNXDk34TYGtcG"><!--pnid:0Jv6oR7sVYgDuBoA2PPmGm-->进度汇总</td><td data-page-node-id="sjGYtqclW4CFbT8IVA047I"><!--pnid:wwsLFceRxXcWhrYPsSOuwl-->统一状态视图，按依赖自动提醒</td><td data-page-node-id="QagldHQExv1jIpli2zgjOH"><!--pnid:Vt0qSlloAi6hzPwR9bUKEY-->逐群去问，便签与群消息先行</td><td data-page-node-id="BEtSa5RSLAa8fvT9AXq2YH"><!--pnid:cGw6WiRugdBmThAAVKCwpF-->依赖识别没有单一事实源</td></tr>
+      <tr data-page-node-id="6g56gYy81kJ5s4SnAq661Q"><td data-page-node-id="xZkpBxixLmNMpZlVHRCGna"><!--pnid:PMAvsjef1WVmJ7kxJb0HkP-->完成判定</td><td data-page-node-id="WxQv86ANcJxxBg6Y6wYoVA"><!--pnid:D2y9GFipxehKx95ItCcaIy-->一个“完成”口径，签收即闭环</td><td data-page-node-id="XfMVkA0oRPlvSq2dhT8nhe"><!--pnid:QVdMTx2P9QZlHjbVwIUjGL-->供应商按安装结束、运营按可营业</td><td data-page-node-id="GChoEgB5nO71D7RWFUzz3M"><!--pnid:sTKU5BGF6A7R4k6YhO8wGV-->验收责任落在交接缝里</td></tr>
+      <tr data-page-node-id="qqZGZLge1Uk2HKDjzz3qhH"><td data-page-node-id="KJH5KUUtMDtcW9zC0FYJ5z"><!--pnid:NhVW39PHgpqH65SVebT9t0-->补录</td><td data-page-node-id="3Ytt2VkwpGw31C1iRc4YHR"><!--pnid:UZZCDd4FgzQWVyr7HviRjF-->现场即时录入</td><td data-page-node-id="8lIC5C7hNsZvPZqfYgsk1y"><!--pnid:aKrapANQQuUUooE8kgsnI0-->高峰期不能离岗，事后集中补</td><td data-page-node-id="AzzhFfC7AdSmfbdS1GKi3w"><!--pnid:n0DLe0CFvyyiEfkLLNEozw-->补录漏项，判断依据丢失</td></tr>
+      <tr data-page-node-id="xR15lV68aHjiJCUH09CcYn"><td data-page-node-id="cTm2oqud2PARSttb1fffRE"><!--pnid:PheGvBZarme0EdE0YdNPMO-->异常处理</td><td data-page-node-id="nG2DxWNE2rD4HEXRGUAYsf"><!--pnid:4AYPYfx6hX4fpCdwqeYY9c-->系统提示 + 具名接手人</td><td data-page-node-id="m8ZEogm1PcryochQSGh14a"><!--pnid:n6DoUMtVEN4n21S7rdCttH-->口头周转，事后补记录</td><td data-page-node-id="GeoogrvOpTBn2BoaIfrOV4"><!--pnid:LvgpkSAyEf2vfTBatj4Evl-->无签收时间，无法追溯</td></tr>
+    </tbody>
+  </table>
+
+  <div data-page-node-id="sGnxcbJH9lwDKjilmWnP0Z" class="note"><!--pnid:vjhDVhvJV9gDKx2hsU5m1J-->
+    证据口径：本图所有节点均来自 6 位角色的访谈陈述（合成演练），标注编号对应「零售-00X」；未获得独立日志或单据佐证的数字一律按“受访口径”使用。<br data-page-node-id="rQrn1dYuPGzrHTb8wcUkvM">
+    <b data-page-node-id="xrQceBexyOfgez7rVLdRCs"><!--pnid:kYWh60OhjhqYqd4iEjrGi7-->仍待核实</b><!--pnid:armKAdESxg0jozhewjtsiQ-->：95% 完整率的统计人与漏项复核人、3 家试点是否含设施最复杂门店、照片验收日期与负责人主键规则、“可临时入库 / 必须拒收”的判定人、异常升级的“约定时限”起算点。<br data-page-node-id="6vubxnLf2dCkwO30Ru7DCJ"><!--pnid:0DoAp1bvtScEwVjblLlQRe-->
+    参考文件：discovery-report.md · 开店筹备与运营验收-现场调研报告.md · 开店筹备与运营验收-业务挖掘报告.md
+  </div>
+
+</div>
+</body>
+</html>
